@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>es.cvjpy.maven</groupId>
+        <artifactId>compilar</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <groupId>es.cvjpy.seguridad</groupId>
+    <artifactId>seguridad-cli</artifactId>
+    <packaging>jar</packaging>
+
+    <name>24 - seguridad-cli - El API Cliente de seguridad</name>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
+        
+    <build>
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/java</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                    <exclude>**/*.jrxml</exclude>
+                    <exclude>**/*.txt</exclude>
+                </excludes>
+            </resource>
+        </resources>              
+        <plugins>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>es.cvjpy.alfa</groupId>
+            <artifactId>alfa-cli</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>seguridad-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>5.6.0</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+    <description>En esta versión se utiliza la jasperreports-5.6.0
+        Y hay que compilar con el JasperC-1.2</description>
+</project>
